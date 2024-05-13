@@ -25,7 +25,7 @@
   }
 
   .h2-bold {
-    @apply text-[30px] font-bold leading-[140%] tracking-tighter;
+    @apply text-[30px] font-bold leading-[140%] tracking-tighter bg-gradient-to-l from-sky-50 to-sky-900;
   }
 
   .h3-bold {
@@ -271,7 +271,7 @@
   }
 
   .shad-button_dark_4 {
-    @apply h-12 bg-dark-4 px-5 text-light-1 flex gap-2 !important;
+    @apply h-12 bg-gradient-to-l from-sky-50 to-sky-900 text-light-1 flex gap-2 !important;
   }
 
   .shad-button_ghost {
