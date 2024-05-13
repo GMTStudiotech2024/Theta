@@ -28,12 +28,7 @@ const LeftSidebar = () => {
     <nav className="leftsidebar">
       <div className="flex flex-col gap-11">
         <Link to="/" className="flex gap-3 items-center">
-          <img
-            src="/assets/images/G.svg"
-            alt="logo"
-            width={170}
-            height={36}
-          />
+        <h2 className="h3-bold md:h2-bold text-left w-full text-sky-400">Theta</h2>
         </Link>
 
         {isLoading || !user.email ? (
