@@ -1,6 +1,7 @@
 import { Models } from "appwrite";
 // import { useToast } from "@/components/ui/use-toast";
 import { Loader, PostCard, UserCard } from "@/components/shared";
+
 import { useGetRecentPosts, useGetUsers } from "@/lib/react-query/queries";
 
 const Home = () => {
@@ -21,10 +22,10 @@ const Home = () => {
     return (
       <div className="flex flex-1">
         <div className="home-container">
-          <p className="body-medium text-light-1">Something bad happened</p>
+          <p className="body-medium text-light-1">Something happened here, maybe your internet has some problem 😐</p>
         </div>
         <div className="home-creators">
-          <p className="body-medium text-light-1">Something bad happened</p>
+          <p className="body-medium text-light-1">Something happened here, maybe your internet has some problem 😐</p>
         </div>
       </div>
     );
@@ -34,7 +35,7 @@ const Home = () => {
     <div className="flex flex-1">
       <div className="home-container">
         <div className="home-posts">
-          <h2 className="h3-bold md:h2-bold text-left w-full">Home page</h2>
+          <h2 className="h3-bold md:h2-bold text-left w-full">Theta - Home Page</h2>
           {isPostLoading && !posts ? (
             <Loader />
           ) : (
