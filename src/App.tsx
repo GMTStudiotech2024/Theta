@@ -5,7 +5,7 @@ import {
   Explore,
   Saved,
   CreatePost,
-  chat,
+  Chat,
   Profile,
   EditPost,
   PostDetails,
@@ -20,6 +20,7 @@ import SigninForm from "@/_auth/forms/SigninForm";
 import { Toaster } from "@/components/ui/toaster";
 
 import "./globals.css";
+import Chat from "./_root/pages/chat";
 
 const App = () => {
   return (
@@ -42,7 +43,7 @@ const App = () => {
           <Route path="/posts/:id" element={<PostDetails />} />
           <Route path="/profile/:id/*" element={<Profile />} />
           <Route path="/update-profile/:id" element={<UpdateProfile />} />
-          <Route path="/chat" element={<chat />} />
+          <Route path="/chat" element={<Chat />} />
         </Route>
       </Routes>
 

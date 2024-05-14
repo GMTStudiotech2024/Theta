@@ -1,8 +1,8 @@
 
-type chat ={
+type Chat ={
   chat:string;
 }
-const chat = () => {
+const Chat = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
       <div className="text-center">
@@ -16,4 +16,4 @@ const chat = () => {
   );
 }
 
-export default chat
+export default Chat
