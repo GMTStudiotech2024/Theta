@@ -22,10 +22,10 @@ const Home = () => {
     return (
       <div className="flex flex-1">
         <div className="home-container">
-          <p className="body-medium text-light-1">Something happened here, maybe your internet has some problem 😐</p>
+          <p className="body-medium text-fuchsia-500">Something happened here, maybe your internet has some problem 😐</p>
         </div>
         <div className="home-creators">
-          <p className="body-medium text-light-1">Something happened here, maybe your internet has some problem 😐</p>
+          <p className="body-medium text-fuchsia-500">Something happened here, maybe your internet has some problem 😐</p>
         </div>
       </div>
     );
@@ -41,7 +41,7 @@ const Home = () => {
           ) : (
             <ul className="flex flex-col flex-1 gap-9 w-full ">
               {posts?.documents.map((post: Models.Document) => (
-                <li key={post.$id} className="flex justify-center w-full">
+                <li key={post.$id} className="flex justify-center w-full ">
                   <PostCard post={post} />
                 </li>
               ))}
