@@ -26,8 +26,8 @@ export const sidebarLinks = [
   },
   {
   imgURL:"/assets/icons/chat.svg",
-  route:"/Chat",
-  label:"Chat",
+  route:"/chat",
+  label:"chat",
 }
 ];
 
@@ -54,7 +54,7 @@ export const bottombarLinks = [
   },
   {
     imgURL:"/assets/icons/chat.svg",
-    route:"/Chat",
-    label:"Chat",
+    route:"/chat",
+    label:"chat",
   }
 ];
