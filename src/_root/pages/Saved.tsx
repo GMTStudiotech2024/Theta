@@ -26,7 +26,7 @@ const Saved = () => {
           alt="edit"
           className="invert-white"
         />
-        <h2 className="h3-bold md:h2-bold text-left w-full text-fuchsia-400">Saved Posts</h2>
+        <h2 className="h3-bold md:h2-bold text-left w-full text-fuchsia-400">Saved Posts 🗃️</h2>
       </div>
 
       {!currentUser ? (
