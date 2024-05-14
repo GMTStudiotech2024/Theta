@@ -41,16 +41,16 @@ export const Chat: React.FC<ChatProps> = ({ chat, errorCode = 404, errorMessage 
           <h3 className="text-3xl font-semibold mb-4">Suggested Pages</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-2">About Us</h4>
-              <p className="text-gray-400">Learn more about our company and mission.</p>
+              <h4 className="text-xl font-semibold mb-2">Home page </h4>
+              <p className="text-gray-400">The main page of this social media </p>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-2">Products</h4>
-              <p className="text-gray-400">Explore our range of products and services.</p>
+              <h4 className="text-xl font-semibold mb-2">Explore</h4>
+              <p className="text-gray-400">Explore what other user has uploaded</p>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-2">Contact Us</h4>
-              <p className="text-gray-400">Get in touch with our support team.</p>
+              <h4 className="text-xl font-semibold mb-2">Create post </h4>
+              <p className="text-gray-400">Create your post!!</p>
             </div>
           </div>
         </div>
