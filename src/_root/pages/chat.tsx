@@ -7,7 +7,7 @@ interface ChatProps {
   errorMessage?: string;
 }
 
-const Chat: React.FC<ChatProps> = ({ chat, errorCode = 404, errorMessage = 'Page Not Found' }) => {
+const chat: React.FC<ChatProps> = ({ chat, errorCode = 404, errorMessage = 'Page Not Found' }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="text-center max-w-md mx-auto">
@@ -40,4 +40,4 @@ const Chat: React.FC<ChatProps> = ({ chat, errorCode = 404, errorMessage = 'Page
   );
 };
 
-export default Chat ;
+export default chat ;
