@@ -20,7 +20,7 @@ import SigninForm from "@/_auth/forms/SigninForm";
 import { Toaster } from "@/components/ui/toaster";
 
 import "./globals.css";
-import Chat from "./_root/pages/chat";
+
 
 const App = () => {
   return (
