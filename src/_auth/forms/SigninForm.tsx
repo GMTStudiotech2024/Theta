@@ -54,7 +54,7 @@ const SigninForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-      <h2 className="h2-bold text-indigo-600">Theta v0.2a</h2>
+      <h2 className="h2-bold text-rose-500">Theta v0.3a</h2>
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
           Log in to your account
