@@ -40,4 +40,4 @@ const Chat: React.FC<ChatProps> = ({ chat, errorCode = 404, errorMessage = 'Page
   );
 };
 
-export default Chat;
+export default Chat ;
