@@ -543,4 +543,5 @@ export async function updateUser(user: IUpdateUser) {
   } catch (error) {
     console.log(error);
   }
+  
 }
