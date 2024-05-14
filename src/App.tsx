@@ -6,6 +6,7 @@ import {
   Saved,
   CreatePost,
   Profile,
+  Chat,
   EditPost,
   PostDetails,
   UpdateProfile,
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/posts/:id" element={<PostDetails />} />
           <Route path="/profile/:id/*" element={<Profile />} />
           <Route path="/update-profile/:id" element={<UpdateProfile />} />
+          <Route path="/chat" element={<Chat />} />
         </Route>
       </Routes>
 
