@@ -1,7 +1,5 @@
-import React from 'react';
 
-
-const chat: React.FC = () => {
+const chat = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
       <div className="text-center">
