@@ -6,7 +6,6 @@ import {
   Saved,
   CreatePost,
   Profile,
-  Chat,
   EditPost,
   PostDetails,
   UpdateProfile,
@@ -18,6 +17,7 @@ import SignupForm from "@/_auth/forms/SignupForm";
 import SigninForm from "@/_auth/forms/SigninForm";
 
 import { Toaster } from "@/components/ui/toaster";
+import { Chat } from '@/_root/pages/Chat';
 
 import "./globals.css";
 
