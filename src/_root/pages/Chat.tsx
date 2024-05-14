@@ -8,35 +8,54 @@ interface ChatProps {
 
 export const Chat: React.FC<ChatProps> = ({ chat, errorCode = 404, errorMessage = 'Page Not Found' }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="text-center max-w-md mx-auto">
-        <h1 className="text-9xl font-bold text-gray-800">{errorCode}</h1>
-        <h2 className="text-4xl font-semibold text-gray-700 mt-4">{errorMessage}</h2>
-        <p className="text-lg text-gray-600 mt-4">
+    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center px-4 py-8">
+      <div className="max-w-4xl mx-auto text-center text-white">
+        <h1 className="text-9xl font-bold mb-8">{errorCode}</h1>
+        <h2 className="text-5xl font-semibold mb-6">{errorMessage}</h2>
+        <p className="text-xl mb-8">
           The page you were looking for does not exist or has been removed.
         </p>
+
         {chat && (
-          <p className="text-base text-gray-500 mt-2">
+          <p className="text-lg mb-12">
             You were looking for: <span className="font-semibold">{chat}</span>
           </p>
         )}
-        <div className="mt-8 flex flex-col space-y-4">
+
+        <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
           <Link
             to="/"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors duration-300 text-center"
+            className="px-8 py-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors duration-300 text-center"
           >
             Go to Home Page
           </Link>
           <button
-            className="px-6 py-3 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition-colors duration-300 text-center"
+            className="px-8 py-4 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors duration-300 text-center"
             onClick={() => window.history.back()}
           >
             Go Back
           </button>
         </div>
+
+        <div className="mt-16">
+          <h3 className="text-3xl font-semibold mb-4">Suggested Pages</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300">
+              <h4 className="text-xl font-semibold mb-2">About Us</h4>
+              <p className="text-gray-400">Learn more about our company and mission.</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300">
+              <h4 className="text-xl font-semibold mb-2">Products</h4>
+              <p className="text-gray-400">Explore our range of products and services.</p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300">
+              <h4 className="text-xl font-semibold mb-2">Contact Us</h4>
+              <p className="text-gray-400">Get in touch with our support team.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
-
 export default Chat; 
