@@ -1,61 +1,57 @@
+// IntroductionPage.tsx
 import { Link } from 'react-router-dom';
 
-interface ChatProps {
-  chat?: string;
-  errorCode?: number;
-  errorMessage?: string;
-}
-
-export const Chat: React.FC<ChatProps> = ({ chat, errorCode = 404, errorMessage = 'Page Not Found' }) => {
+const IntroductionPage = () => {
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center px-4 py-8">
-      <div className="max-w-4xl mx-auto text-center text-white">
-        <h1 className="text-9xl font-bold mb-8">{errorCode}</h1>
-        <h2 className="text-5xl font-semibold mb-6">{errorMessage}</h2>
-        <p className="text-xl mb-8">
-          The page you were looking for does not exist or has been removed.
-        </p>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      <div className="w-full bg-yellow-200 text-yellow-800 p-4 text-center">
+        <p className="font-semibold">Requires signing up for a new account, different from the Theta social media platform.</p>
+      </div>
 
-        {chat && (
-          <p className="text-lg mb-12">
-            You were looking for: <span className="font-semibold">{chat}</span>
-          </p>
-        )}
+      <header className="w-full text-center py-6 bg-blue-600 text-white">
+        <h1 className="text-5xl font-bold">Welcome to Theta-Chat</h1>
+        <p className="text-2xl mt-2">Connect. Communicate. Collaborate.</p>
+      </header>
+      
+      <main className="flex flex-col items-center py-10 space-y-10 w-full max-w-4xl">
+        <section className="text-center">
+          <p className="text-xl mb-6">Theta-Chat is a cutting-edge chat application designed to provide real-time messaging capabilities for you and your friends.</p>
+          <div className="flex space-x-4">
+            <Link to="/login" className="text-blue-500 underline">Login</Link>
+            <a href="https://www.example.com" className="text-blue-500 underline">Learn More</a>
+          </div>
+        </section>
 
-        <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center">
-          <Link
-            to="/"
-            className="px-8 py-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors duration-300 text-center"
-          >
-            Go to Home Page
-          </Link>
-          <button
-            className="px-8 py-4 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors duration-300 text-center"
-            onClick={() => window.history.back()}
-          >
-            Go Back
-          </button>
-        </div>
-
-        <div className="mt-16">
-          <h3 className="text-3xl font-semibold mb-4">Suggested Pages</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-2">Home page </h4>
-              <p className="text-gray-400">The main page of this social media </p>
+        <section className="text-center">
+          <h2 className="text-3xl font-bold mb-4">Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 bg-white rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-2">Real-Time Messaging</h3>
+              <p>Experience instant communication with friends and colleagues.</p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-2">Explore</h4>
-              <p className="text-gray-400">Explore what other user has uploaded</p>
+            <div className="p-6 bg-white rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-2">Media Sharing</h3>
+              <p>Share photos, videos, and documents effortlessly.</p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-2">Create post </h4>
-              <p className="text-gray-400">Create your post!!</p>
+            <div className="p-6 bg-white rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-2">Group Chats</h3>
+              <p>Create and manage group chats for various purposes.</p>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+
+        <section className="text-center">
+          <h2 className="text-3xl font-bold mb-4">Get Started</h2>
+          <p className="text-xl mb-6">Sign up now and join the Theta-Chat community!</p>
+          <Link to="/register" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">Register Now</Link>
+        </section>
+      </main>
+      
+      <footer className="w-full text-center py-4 bg-gray-200">
+        <p>&copy; 2024 Theta-Chat. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
-export default Chat; 
+
+export default IntroductionPage;
