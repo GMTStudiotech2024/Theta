@@ -26,7 +26,7 @@ const LeftSidebar = () => {
 
   return (
     <nav className="leftsidebar">
-      <div className="flex flex-col gap-11">
+      <div className="flex flex-col gap-5">
         <Link to="/" className="flex gap-3 items-center">
         <h2 className="h3-bold md:h2-bold text-left w-full text-rose-500">Theta v0.3a</h2>
         </Link>
@@ -40,7 +40,7 @@ const LeftSidebar = () => {
             <img
               src={user.imageUrl || "/assets/icons/profile-placeholder.svg"}
               alt="profile"
-              className="h-14 w-14 rounded-full"
+              className="h-13 w-14 rounded-full"
             />
             <div className="flex flex-col">
               <p className="body-bold">{user.name}</p>
@@ -61,7 +61,7 @@ const LeftSidebar = () => {
                 }`}>
                 <NavLink
                   to={link.route}
-                  className="flex gap-4 items-center p-4">
+                  className="flex gap-3 items-center p-4">
                   <img
                     src={link.imgURL}
                     alt={link.label}
