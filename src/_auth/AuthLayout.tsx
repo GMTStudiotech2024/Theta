@@ -1,7 +1,7 @@
 import { Outlet, Navigate } from "react-router-dom";
 
 import { useUserContext } from "@/context/AuthContext";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export default function AuthLayout() {
   const { isAuthenticated } = useUserContext();
 
@@ -14,7 +14,7 @@ export default function AuthLayout() {
           <section className="flex flex-1 justify-center items-center flex-col py-10">
             <Outlet />
           </section>
-
+        <SpeedInsights />
           <img
             src="/assets/images/side.jpg"
             alt="logo"
