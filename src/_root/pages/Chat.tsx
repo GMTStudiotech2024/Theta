@@ -52,7 +52,7 @@ export const Chat = () => {
         <section className="text-center max-w-5xl">
           <h2 className="text-6xl font-bold mb-10">Get Started</h2>
           <p className="text-3xl mb-12">⚠️ The app now is not available</p>
-          <Link to="/register" className="px-12 py-6 bg-rose-600 text-white rounded-full hover:bg-rose-400 transition duration-300 font-semibold flex items-center justify-center">
+          <Link to="/register" className="px-12 py-6 bg-rose-700 text-white rounded-full hover:bg-rose-400 transition duration-300 font-semibold flex items-center justify-center">
             <FaUserFriends className="mr-4" />
             Not available
           </Link>
