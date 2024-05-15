@@ -50,7 +50,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home-creators">
+      <div className="home-creators bg-gradient from-sky-200 to-sky-500">
         <h3 className="h3-bold text-blue-300">Trend creator</h3>
         {isUserLoading && !creators ? (
           <Loader />
