@@ -1,7 +1,7 @@
 // IntroductionPage.tsx
 import { Link } from 'react-router-dom';
 
-const IntroductionPage = () => {
+const Chat = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="w-full bg-yellow-200 text-yellow-800 p-4 text-center">
@@ -54,4 +54,4 @@ const IntroductionPage = () => {
   );
 };
 
-export default IntroductionPage;
+export default Chat;
