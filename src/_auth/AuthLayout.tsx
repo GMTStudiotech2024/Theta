@@ -16,8 +16,8 @@ export default function AuthLayout() {
           </section>
 
           <video autoPlay loop muted playsInline className="hidden xl:block h-screen w-1/2 object-cover bg-no-repeat">
-  <source src="/assets/images/side5.mp4" type="video/mp4" />
-</video>
+            <source src="/assets/images/side5.mp4" type="video/mp4" />
+          </video>
         </>
       )}
     </>
