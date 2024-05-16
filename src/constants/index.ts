@@ -27,7 +27,7 @@ export const sidebarLinks = [
   {
     imgURL:"/assets/icons/chat.svg",
     route:"/chat",
-    label:"Chat"
+    label:"Chat聊天"
   }
 ];
 
@@ -55,6 +55,6 @@ export const bottombarLinks = [
     {
     imgURL:"/assets/icons/chat.svg",
     route:"/chat",
-    label:"Chat"
+    label:"Chat聊天"
   }
 ];
