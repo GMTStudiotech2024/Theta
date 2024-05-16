@@ -23,9 +23,11 @@ const Home = () => {
       <div className="flex flex-1">
         <div className="home-container">
           <p className="body-medium text-fuchsia-500">Something happened here, maybe your internet has some problem 😐</p>
+          <p className="body-medium text-fuchsia-500">發生問題，請檢察網路連線 😐</p>
         </div>
         <div className="home-creators">
           <p className="body-medium text-fuchsia-500">Something happened here, maybe your internet has some problem 😐</p>
+          <p className="body-medium text-fuchsia-500">發生問題，請檢察網路連線 😐</p>
         </div>
       </div>
     );
@@ -35,7 +37,7 @@ const Home = () => {
     <div className="flex flex-1">
       <div className="home-container">
         <div className="home-posts">
-          <h2 className="h3-bold md:h2-bold text-left w-full text-fuchsia-400">Home Page 🏘️</h2>
+          <h2 className="h3-bold md:h2-bold text-left w-full text-fuchsia-400">Home Page 主頁🏘️</h2>
           {isPostLoading && !posts ? (
             <Loader />
           ) : (
@@ -51,7 +53,7 @@ const Home = () => {
       </div>
 
       <div className="home-creators bg-gradient from-sky-200 to-sky-500">
-        <h3 className="h3-bold text-blue-300">Trend creator</h3>
+        <h3 className="h3-bold text-blue-300">Trend creator熱門用戶</h3>
         {isUserLoading && !creators ? (
           <Loader />
         ) : (

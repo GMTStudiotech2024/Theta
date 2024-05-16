@@ -26,7 +26,7 @@ const EditPost = () => {
             alt="edit"
             className="invert-white"
           />
-          <h2 className="h3-bold md:h2-bold text-left w-full text-fuchsia-400">Edit Post</h2>
+          <h2 className="h3-bold md:h2-bold text-left w-full text-fuchsia-400">Edit Post編輯發文</h2>
         </div>
 
         {isLoading ? <Loader /> : <PostForm action="Update" post={post} />}

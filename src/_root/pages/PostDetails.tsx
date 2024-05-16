@@ -45,7 +45,7 @@ const PostDetails = () => {
             width={24}
             height={24}
           />
-          <p className="small-medium lg:base-medium">Back</p>
+          <p className="small-medium lg:base-medium">Back回上頁</p>
         </Button>
       </div>
 
@@ -142,7 +142,7 @@ const PostDetails = () => {
         <hr className="border w-full border-dark-4/80" />
 
         <h3 className="body-bold md:h3-bold w-full my-10">
-          More Related Posts
+          More Related Posts更多相關貼文
         </h3>
         {isUserPostLoading || !relatedPosts ? (
           <Loader />

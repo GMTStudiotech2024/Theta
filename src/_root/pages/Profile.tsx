@@ -85,13 +85,13 @@ import {
                     height={20}
                   />
                   <p className="flex whitespace-nowrap small-medium">
-                    Edit Profile
+                    Edit Profile更新個人簡介
                   </p>
                 </Link>
               </div>
               <div className={`${user.id === id && "hidden"}`}>
                 <Button type="button" className="shad-button_primary px-8">
-                  Follow
+                  Follow追蹤
                 </Button>
               </div>
             </div>
@@ -111,7 +111,7 @@ import {
                 width={20}
                 height={20}
               />
-              Posts
+              Posts貼文
             </Link>
             <Link
               to={`/profile/${id}/liked-posts`}
@@ -124,7 +124,7 @@ import {
                 width={20}
                 height={20}
               />
-              Liked Posts
+              Liked Posts喜愛的貼文
             </Link>
           </div>
         )}

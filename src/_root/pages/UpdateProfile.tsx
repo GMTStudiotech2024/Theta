@@ -84,7 +84,7 @@ const UpdateProfile = () => {
             alt="edit"
             className="invert-white"
           />
-          <h2 className="h3-bold md:h2-bold text-left w-full">Edit Profile</h2>
+          <h2 className="h3-bold md:h2-bold text-left w-full">Edit Profile編輯簡介</h2>
         </div>
 
         <Form {...form}>
@@ -112,7 +112,7 @@ const UpdateProfile = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="shad-form_label">Name</FormLabel>
+                  <FormLabel className="shad-form_label">Name名字</FormLabel>
                   <FormControl>
                     <Input type="text" className="shad-input" {...field} />
                   </FormControl>
@@ -126,7 +126,7 @@ const UpdateProfile = () => {
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="shad-form_label">Username</FormLabel>
+                  <FormLabel className="shad-form_label">Username使用者名稱</FormLabel>
                   <FormControl>
                     <Input
                       type="text"
@@ -145,7 +145,7 @@ const UpdateProfile = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="shad-form_label">Email</FormLabel>
+                  <FormLabel className="shad-form_label">Email電子郵件</FormLabel>
                   <FormControl>
                     <Input
                       type="text"
@@ -164,7 +164,7 @@ const UpdateProfile = () => {
               name="bio"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="shad-form_label">Bio</FormLabel>
+                  <FormLabel className="shad-form_label">Bio描述</FormLabel>
                   <FormControl>
                     <Textarea
                       className="shad-textarea custom-scrollbar"
@@ -188,7 +188,7 @@ const UpdateProfile = () => {
                 className="shad-button_primary whitespace-nowrap"
                 disabled={isLoadingUpdate}>
                 {isLoadingUpdate && <Loader />}
-                Update Profile
+                Update Profile更新簡介
               </Button>
             </div>
           </form>

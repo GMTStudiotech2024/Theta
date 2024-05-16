@@ -28,7 +28,7 @@ const LeftSidebar = () => {
     <nav className="leftsidebar">
       <div className="flex flex-col gap-5">
         <Link to="/" className="flex gap-3 items-center">
-        <h2 className="h3-bold md:h2-bold text-left w-full text-yellow-500">Theta v0.5a</h2>
+        <h2 className="h3-bold md:h2-bold text-left w-full text-yellow-500">Theta v0.6a</h2>
         </Link>
 
         {isLoading || !user.email ? (
@@ -82,7 +82,7 @@ const LeftSidebar = () => {
         className="shad-button_ghost"
         onClick={(e) => handleSignOut(e)}>
         <img src="/assets/icons/logout.svg" alt="logout" />
-        <p className="small-medium lg:base-medium text-sky-400">Logout</p>
+        <p className="small-medium lg:base-medium text-sky-400">Logout 登出</p>
       </Button>
     </nav>
   );

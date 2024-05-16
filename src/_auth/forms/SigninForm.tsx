@@ -54,13 +54,13 @@ const SigninForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-      <h2 className="h2-bold text-yellow-500">Theta v0.5a</h2>
+      <h2 className="h2-bold text-yellow-500">Theta v0.6a</h2>
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
-          Log in to your account
+          Log in to your account登入你的帳號
         </h2>
         <p className="text-light-3 small-medium md:base-regular mt-2">
-          Welcome back! Please enter your details.
+          Welcome back! Please enter your details.歡迎回來！請輸入電子郵件和密碼
         </p>
         <form
           onSubmit={form.handleSubmit(handleSignin)}
@@ -70,7 +70,7 @@ const SigninForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Email</FormLabel>
+                <FormLabel className="shad-form_label">Email電子郵件</FormLabel>
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
@@ -84,7 +84,7 @@ const SigninForm = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Password</FormLabel>
+                <FormLabel className="shad-form_label">Password密碼</FormLabel>
                 <FormControl>
                   <Input type="password" className="shad-input" {...field} />
                 </FormControl>
@@ -104,11 +104,11 @@ const SigninForm = () => {
           </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">
-            Don&apos;t have an account?
+            Don&apos;t have an account? 還沒有帳號？
             <Link
               to="/sign-up"
               className="text-primary-500 text-small-semibold ml-1">
-              Sign up
+              Sign up 註冊
             </Link>
           </p>
         </form>

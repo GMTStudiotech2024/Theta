@@ -89,7 +89,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
           name="caption"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="shad-form_label">Caption</FormLabel>
+              <FormLabel className="shad-form_label">Caption介紹</FormLabel>
               <FormControl>
                 <Textarea
                   className="shad-textarea custom-scrollbar"
@@ -106,7 +106,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
           name="file"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="shad-form_label">Add Photos</FormLabel>
+              <FormLabel className="shad-form_label">Add Photos加入圖片</FormLabel>
               <FormControl>
                 <FileUploader
                   fieldChange={field.onChange}
@@ -123,7 +123,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
           name="location"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="shad-form_label">Add Location</FormLabel>
+              <FormLabel className="shad-form_label">Add Location加入地點</FormLabel>
               <FormControl>
                 <Input type="text" className="shad-input" {...field} />
               </FormControl>
@@ -138,7 +138,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="shad-form_label">
-                Add Tags (separated by comma " , ")
+                Add Tags (separated by comma " , ")加入標記 (用 " , " 分開)
               </FormLabel>
               <FormControl>
                 <Input

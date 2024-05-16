@@ -91,7 +91,7 @@ import {
               </div>
               <div className={`${user.id === id && "hidden"}`}>
                 <Button type="button" className="shad-button_primary px-8">
-                  Follow
+                  追蹤
                 </Button>
               </div>
             </div>

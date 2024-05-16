@@ -17,6 +17,7 @@ const AllUsers = () => {
     <div className="common-container">
       <div className="user-container">
         <h2 className="h3-bold md:h2-bold text-left w-full text-sky-500">All user in Theta</h2>
+        <h2 className="h3-bold md:h2-bold text-left w-full text-sky-500">Theta 中所有使用者</h2>
         {isLoading && !creators ? (
           <Loader />
         ) : (
