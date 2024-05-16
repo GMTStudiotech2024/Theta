@@ -2,27 +2,27 @@ export const sidebarLinks = [
   {
     imgURL: "/assets/icons/home.svg",
     route: "/",
-    label: "Home",
+    label: "Home主頁",
   },
   {
     imgURL: "/assets/icons/wallpaper.svg",
     route: "/explore",
-    label: "Explore",
+    label: "Explore探索",
   },
   {
     imgURL: "/assets/icons/people.svg",
     route: "/all-users",
-    label: "People",
+    label: "People使用者",
   },
   {
     imgURL: "/assets/icons/bookmark.svg",
     route: "/saved",
-    label: "Saved",
+    label: "Saved儲存",
   },
   {
     imgURL: "/assets/icons/gallery-add.svg",
     route: "/create-post",
-    label: "Create Post",
+    label: "Create Post新增貼文",
   },
   {
     imgURL:"/assets/icons/chat.svg",
@@ -35,21 +35,21 @@ export const bottombarLinks = [
   {
     imgURL: "/assets/icons/home.svg",
     route: "/",
-    label: "Home",
+    label: "Home主頁",
   },
   {
     imgURL: "/assets/icons/wallpaper.svg",
     route: "/explore",
-    label: "Explore",
+    label: "Explore探索",
   },
   {
     imgURL: "/assets/icons/bookmark.svg",
     route: "/saved",
-    label: "Saved",
+    label: "Saved儲存",
   },
   {
     imgURL: "/assets/icons/gallery-add.svg",
-    route: "/create-post",
+    route: "/create-post新增",
     label: "Create",
   },
     {
