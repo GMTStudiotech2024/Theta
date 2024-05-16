@@ -18,7 +18,7 @@ const Topbar = () => {
     <section className="topbar">
       <div className="flex-between py-4 px-5">
         <Link to="/" className="flex gap-3 items-center">
-        <h2 className="h3-bold md:h2-bold text-left w-full text-blue-500">Theta v0.42a</h2>
+        <h2 className="h3-bold md:h2-bold text-left w-full text-yellow-500">Theta v0.5a</h2>
         </Link>
 
         <div className="flex gap-4">
