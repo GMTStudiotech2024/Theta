@@ -75,7 +75,7 @@ const SignupForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-      <h2 className="h2-bold text-blue-500">Theta v0.42a</h2>
+      <h2 className="h2-bold text-yellow-500">Theta v0.5a</h2>
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
           Create a new account
