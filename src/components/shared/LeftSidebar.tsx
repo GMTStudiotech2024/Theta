@@ -28,7 +28,7 @@ const LeftSidebar = () => {
     <nav className="leftsidebar">
       <div className="flex flex-col gap-5">
         <Link to="/" className="flex gap-3 items-center">
-        <h2 className="h3-bold md:h2-bold text-left w-full text-yellow-500">Theta v0.6a</h2>
+        <h2 className="h3-bold md:h2-bold text-left w-full text-yellow-500">Theta v0.6 beta</h2>
         </Link>
 
         {isLoading || !user.email ? (
