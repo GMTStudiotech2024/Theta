@@ -49,8 +49,8 @@ export const bottombarLinks = [
   },
   {
     imgURL: "/assets/icons/gallery-add.svg",
-    route: "/create-post新增",
-    label: "Create",
+    route: "/create-post",
+    label: "Create 新增貼文",
   },
     {
     imgURL:"/assets/icons/chat.svg",
