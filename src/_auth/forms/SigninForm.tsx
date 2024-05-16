@@ -57,10 +57,16 @@ const SigninForm = () => {
       <h2 className="h2-bold text-yellow-500">Theta v0.6 beta</h2>
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
-          Log in to your account登入你的帳號
+          Log in to your account
+        </h2>
+        <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
+          登入你的帳號
         </h2>
         <p className="text-light-3 small-medium md:base-regular mt-2">
-          Welcome back! Please enter your details.歡迎回來！請輸入電子郵件和密碼
+          Welcome back! Please enter your details.
+        </p>
+        <p className="text-light-3 small-medium md:base-regular mt-2">
+        歡迎回來！請輸入電子郵件和密碼
         </p>
         <form
           onSubmit={form.handleSubmit(handleSignin)}
