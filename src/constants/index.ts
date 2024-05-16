@@ -50,7 +50,7 @@ export const bottombarLinks = [
   {
     imgURL: "/assets/icons/gallery-add.svg",
     route: "/create-post",
-    label: "Create 新增貼文",
+    label: "Create 新增",
   },
     {
     imgURL:"/assets/icons/chat.svg",
