@@ -27,7 +27,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAlert(false);
-    }, 5000);
+    }, 2000);
 
     // Cleanup the timer on component unmount
     return () => clearTimeout(timer);
