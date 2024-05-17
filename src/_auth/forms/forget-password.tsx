@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, FormEvent } from 'react';
 import { useNavigate } from "react-router-dom";
-
+import gmtStudioLogo from '/assets/images/GMTStudio_.png';
 const sendEmail = async (email: string): Promise<boolean> => {
   try {
     // Replace this with your actual email sending logic
@@ -54,7 +54,11 @@ const ForgotPassword = () => {
   };
 
   return (
+    
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+      <img src={gmtStudioLogo} alt="GMTStudio" className="w-auto h-12 md:h-16" />
+      <h2 className="h3-bold text-blue-500">Theta v0.7a</h2>
+
       <h1 className="text-2xl font-bold text-center mb-6">Forgot Password</h1>
       {isSubmitted ? (
         <div className="text-center">
