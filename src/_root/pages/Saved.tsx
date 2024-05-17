@@ -19,7 +19,7 @@ const Saved = () => {
   return (
     <div className="saved-container">
       <div className="flex gap-2 w-full max-w-5xl">
-        <h2 className="h3-bold md:h2-bold text-left w-full text-fuchsia-400">Saved Posts已儲存貼文  🗃️</h2>
+        <h2 className="h3-bold md:h2-bold text-left w-full text-yellow-400">Saved Posts已儲存貼文  🗃️</h2>
       </div>
 
       {!currentUser ? (
