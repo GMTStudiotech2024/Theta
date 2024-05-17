@@ -6,10 +6,11 @@ import {
   useParams,
   useLocation,
 } from "react-router-dom";
-import { LikedPosts } from "@/_root/pages/"
+import { LikedPosts } from "@/_root/pages/";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById } from "@/lib/react-query/queries";
 import { GridPostList, Loader } from "@/components/shared";
+import { useEffect, useState } from 'react';
 
 interface StatBlockProps {
   value: string | number;
@@ -22,12 +23,36 @@ const StatBlock = ({ value, label }: StatBlockProps) => (
     <p className="small-medium lg:base-medium text-light-2">{label}</p>
   </div>
 );
+
 const Profile = () => {
   const { id } = useParams();
   const { user } = useUserContext();
   const { pathname } = useLocation();
-
   const { data: currentUser } = useGetUserById(id || "");
+  const [isOnline, setIsOnline] = useState(false);
+
+  useEffect(() => {
+    if (!currentUser) return;
+
+    const checkOnlineStatus = async () => {
+      try {
+        // Assuming you have an endpoint to get user status
+        const response = await fetch(`/api/user-status/${currentUser.$id}`);
+        const data = await response.json();
+        setIsOnline(data.isOnline);
+      } catch (error) {
+        console.error("Error fetching user status:", error);
+      }
+    };
+
+    // Initial status check
+    checkOnlineStatus();
+
+    // Polling every 30 seconds
+    const intervalId = setInterval(checkOnlineStatus, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [currentUser?.$id]);
 
   if (!currentUser)
     return (
@@ -59,7 +84,7 @@ const Profile = () => {
 
             <div className="flex gap-8 mt-10 items-center justify-center xl:justify-start flex-wrap z-20">
               <StatBlock value={currentUser.posts.length} label="Posts" />
-
+              <StatBlock label="Status" value={isOnline ? 'Online' : 'Offline'} />
             </div>
 
             <p className="small-medium md:base-medium text-center xl:text-left mt-7 max-w-screen-sm">
@@ -73,7 +98,8 @@ const Profile = () => {
                 to={`/update-profile/${currentUser.$id}`}
                 className={`h-12 bg-dark-4 px-5 text-light-1 flex-center gap-2 rounded-lg ${
                   user.id !== currentUser.$id && "hidden"
-                }`}>
+                }`}
+              >
                 <img
                   src={"/assets/icons/edit.svg"}
                   alt="edit"
@@ -95,7 +121,8 @@ const Profile = () => {
             to={`/profile/${id}`}
             className={`profile-tab rounded-l-lg ${
               pathname === `/profile/${id}` && "!bg-dark-3"
-            }`}>
+            }`}
+          >
             <img
               src={"/assets/icons/posts.svg"}
               alt="posts"
@@ -108,7 +135,8 @@ const Profile = () => {
             to={`/profile/${id}/liked-posts`}
             className={`profile-tab rounded-r-lg ${
               pathname === `/profile/${id}/liked-posts` && "!bg-dark-3"
-            }`}>
+            }`}
+          >
             <img
               src={"/assets/icons/like.svg"}
               alt="like"
