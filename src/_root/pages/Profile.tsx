@@ -6,9 +6,7 @@ import {
   useParams,
   useLocation,
 } from "react-router-dom";
-
-import { Button } from "@/components/ui";
-import { LikedPosts } from "@/_root/pages";
+import { LikedPosts } from "@/_root/pages/"
 import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById } from "@/lib/react-query/queries";
 import { GridPostList, Loader } from "@/components/shared";
@@ -24,7 +22,6 @@ const StatBlock = ({ value, label }: StatBlockProps) => (
     <p className="small-medium lg:base-medium text-light-2">{label}</p>
   </div>
 );
-
 const Profile = () => {
   const { id } = useParams();
   const { user } = useUserContext();
@@ -62,8 +59,7 @@ const Profile = () => {
 
             <div className="flex gap-8 mt-10 items-center justify-center xl:justify-start flex-wrap z-20">
               <StatBlock value={currentUser.posts.length} label="Posts" />
-              <StatBlock value={0} label="Followers" />
-              <StatBlock value={0} label="Following" />
+
             </div>
 
             <p className="small-medium md:base-medium text-center xl:text-left mt-7 max-w-screen-sm">
@@ -88,11 +84,6 @@ const Profile = () => {
                   Edit Profile更新個人簡介
                 </p>
               </Link>
-            </div>
-            <div className={`${user.id === id && "hidden"}`}>
-              <Button type="button" className="shad-button_primary px-8">
-                Follow追蹤
-              </Button>
             </div>
           </div>
         </div>
