@@ -76,7 +76,7 @@ const SignupForm = () => {
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
       <img src={gmtStudioLogo} className="w-auto h-12 md:h-16" />
-      <h2 className="h3-bold text-blue-500">Theta v0.61a</h2>
+      <h2 className="h3-bold text-blue-500">Theta v0.65a</h2>
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
           Create a new account
