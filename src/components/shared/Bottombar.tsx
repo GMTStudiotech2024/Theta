@@ -1,30 +1,28 @@
 import { Link, useLocation } from "react-router-dom";
-
 import { bottombarLinks } from "@/constants";
 
 const Bottombar = () => {
   const { pathname } = useLocation();
 
   return (
-    <section className="bottom-bar">
+    <section className="fixed bottom-0 left-0 w-full bg-gray-900 p-4 shadow-lg flex justify-around items-center z-50 md:hidden">
       {bottombarLinks.map((link) => {
         const isActive = pathname === link.route;
         return (
           <Link
             key={`bottombar-${link.label}`}
             to={link.route}
-            className={`${
-              isActive && "rounded-[10px] bg-gradient-to-br from-[#38663c] to-[#6be68e] "
-            } flex-center flex-col gap-1 p-2 transition`}>
+            className={`flex flex-col items-center gap-1 p-2 transition ${
+              isActive ? "bg-gradient-to-br from-green-700 to-green-400 rounded-lg" : ""
+            }`}>
             <img
               src={link.imgURL}
               alt={link.label}
-              width={16}
-              height={16}
-              className={`${isActive && "invert-white"}`}
+              width={24}
+              height={24}
+              className={`${isActive ? "filter invert" : ""}`}
             />
-
-            <p className="tiny-medium text-light-2">{link.label}</p>
+            <p className={`text-xs ${isActive ? "text-white" : "text-gray-300"}`}>{link.label}</p>
           </Link>
         );
       })}
