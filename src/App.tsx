@@ -31,7 +31,7 @@ const App = () => {
         <Route element={<AuthLayout />}>
           <Route path="/sign-in" element={<SigninForm />} />
           <Route path="/sign-up" element={<SignupForm />} />
-          <Route path="/forget-password" element={<ForgetPassword />}/>
+          <Route path="/forgot-password" element={<ForgetPassword />}/>
         </Route>
 
         {/* private routes */}
