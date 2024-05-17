@@ -162,6 +162,14 @@ const SignupForm = () => {
               Log in 登入
             </Link>
           </p>
+          <p className="text-s,all-regular text-light-2 text-center mt-2">
+            Forgot your password? 忘記密碼?
+            <Link
+            to="/forgot-password"
+            className="text-primary-500 text-small-semibold ml-1">
+              重設密碼
+              </Link>
+          </p>
         </form>
       </div>
     </Form>
