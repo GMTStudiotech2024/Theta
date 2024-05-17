@@ -266,6 +266,7 @@
   }
 
   /* Button */
+  
   .shad-button_primary {
     @apply bg-gradient-to-l from-sky-50 to-sky-900 text-light-1 flex gap-2 !important;
   }

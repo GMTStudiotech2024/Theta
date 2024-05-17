@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
 import {
   Home,
   Explore,
@@ -15,13 +14,10 @@ import AuthLayout from "./_auth/AuthLayout";
 import RootLayout from "./_root/RootLayout";
 import SignupForm from "@/_auth/forms/SignupForm";
 import SigninForm from "@/_auth/forms/SigninForm";
-
 import { Toaster } from "@/components/ui/toaster";
-import { Chat } from '@/_root/pages/Chat';
-
+import { Chat } from "@/_root/pages/Chat";
 import "./globals.css";
 import ForgetPassword from "./_auth/forms/forget-password";
-
 
 const App = () => {
   return (
@@ -31,7 +27,7 @@ const App = () => {
         <Route element={<AuthLayout />}>
           <Route path="/sign-in" element={<SigninForm />} />
           <Route path="/sign-up" element={<SignupForm />} />
-          <Route path="/forgot-password" element={<ForgetPassword />}/>
+          <Route path="/forgot-password" element={<ForgetPassword />} />
         </Route>
 
         {/* private routes */}
@@ -48,7 +44,6 @@ const App = () => {
           <Route path="/chat" element={<Chat />} />
         </Route>
       </Routes>
-
       <Toaster />
     </main>
   );

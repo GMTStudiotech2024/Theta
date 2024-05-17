@@ -545,3 +545,56 @@ export async function updateUser(user: IUpdateUser) {
   }
   
 }
+// ============================== FOLLOW USER
+export async function followUser(followerId: string, followedId: string) {
+  try {
+    const newFollow = await databases.createDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.followsCollectionId,
+      ID.unique(),
+      {
+        followerId,
+        followedId,
+      }
+    );
+
+    return newFollow;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// ============================== UNFOLLOW USER
+export async function unfollowUser(followId: string) {
+  try {
+    const response = await databases.deleteDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.followsCollectionId,
+      followId
+    );
+
+    return { status: "Ok", data: response };
+  } catch (error) {
+    console.log(error);
+    return { status: "Error", error };
+  }
+}
+
+// ============================== CHECK FOLLOW STATUS
+export async function checkFollowStatus(followerId: string, followedId: string) {
+  try {
+    const followStatus = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.followsCollectionId,
+      [
+        Query.equal("followerId", followerId),
+        Query.equal("followedId", followedId)
+      ]
+    );
+
+    return followStatus.documents.length > 0;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
