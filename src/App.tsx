@@ -20,6 +20,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Chat } from '@/_root/pages/Chat';
 
 import "./globals.css";
+import ForgetPassword from "./_auth/forms/forget-password";
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route element={<AuthLayout />}>
           <Route path="/sign-in" element={<SigninForm />} />
           <Route path="/sign-up" element={<SignupForm />} />
+          <Route path="/forget-password" element={<ForgetPassword />}/>
         </Route>
 
         {/* private routes */}
