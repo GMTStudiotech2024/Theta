@@ -1,13 +1,11 @@
 import { useState, useEffect, useRef, FormEvent } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import gmtStudioLogo from '/assets/images/GMTStudio_.png';
+
 const sendEmail = async (email: string): Promise<boolean> => {
   try {
-    // Replace this with your actual email sending logic
     console.log(`Sending password reset email to ${email}`);
-    // Simulate email sending delay
     await new Promise(resolve => setTimeout(resolve, 2000));
-    // Simulate email success/failure
     const isSuccess = Math.random() > 0.2; // 80% success rate
     return isSuccess;
   } catch (error) {
@@ -20,6 +18,7 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState<string>('');
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const history = useNavigate();
@@ -33,10 +32,12 @@ const ForgotPassword = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsError(false);
+    setErrorMessage('');
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email.trim())) {
       setIsError(true);
+      setErrorMessage('Please enter a valid email address.');
       return;
     }
 
@@ -50,25 +51,26 @@ const ForgotPassword = () => {
       setIsError(false);
     } else {
       setIsError(true);
+      setErrorMessage('Failed to send email. Please try again later.');
     }
   };
 
   return (
-    
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <img src={gmtStudioLogo} alt="GMTStudio" className="w-auto h-12 md:h-16" />
-      <h2 className="h3-bold text-blue-500">Theta v0.7a</h2>
-
+      <div className="text-center mb-6">
+        <img src={gmtStudioLogo} alt="GMTStudio" className="w-auto h-12 md:h-16 mx-auto" />
+        <h2 className="h3-bold text-blue-500 mt-2">Theta v0.7a</h2>
+      </div>
       <h1 className="text-2xl font-bold text-center mb-6">Forgot Password</h1>
       {isSubmitted ? (
         <div className="text-center">
-          <p className="text-green-600">
+          <p className="text-green-600 mb-4">
             Your request to reset your password has been sent to the admin account.
             You will receive further instructions via email.
           </p>
           <button
             onClick={() => setIsSubmitted(false)}
-            className="mt-4 py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300"
+            className="py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300"
           >
             Send Another Request
           </button>
@@ -94,7 +96,7 @@ const ForgotPassword = () => {
               />
               {isError && (
                 <p className="text-red-600 mt-2">
-                  Please enter a valid email address.
+                  {errorMessage}
                 </p>
               )}
             </div>
@@ -104,15 +106,21 @@ const ForgotPassword = () => {
               disabled={isLoading}
               aria-busy={isLoading}
             >
-              {isLoading ? 'Sending...' : 'Submit Request'}
+              {isLoading ? (
+                <div className="flex justify-center items-center">
+                  <svg className="animate-spin h-5 w-5 mr-3 border-t-2 border-b-2 border-white rounded-full" viewBox="0 0 24 24"></svg>
+                  Sending...
+                </div>
+              ) : (
+                'Submit Request'
+              )}
             </button>
           </form>
         </>
       )}
       <div className="text-center mt-6">
         <button
-          onClick={() => history("/sign-in")}
-
+          onClick={() => history('/sign-in')}
           className="py-2 px-4 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors duration-300"
         >
           Back to Login
