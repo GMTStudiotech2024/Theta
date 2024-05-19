@@ -6,30 +6,23 @@ import { AlertDemo } from "@/components/ui/alert";
 
 const Home = () => {
   const [isFullWidth, setIsFullWidth] = useState(false);
-  const [showAlert, setShowAlert] = useState(true); // New state variable for alert visibility
+  const [showAlert, setShowAlert] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsFullWidth(window.innerWidth >= 1280); // Example width, you can adjust this value
+      setIsFullWidth(window.innerWidth >= 1280);
     };
 
-    // Initial check
     handleResize();
-
-    // Add event listener
     window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on component unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Effect to hide the alert after 5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAlert(false);
-    }, 2000);
+    }, 5000);
 
-    // Cleanup the timer on component unmount
     return () => clearTimeout(timer);
   }, []);
 
@@ -46,53 +39,54 @@ const Home = () => {
 
   if (isErrorPosts || isErrorCreators) {
     return (
-      <div className="flex flex-1">
-        <div className="home-container">
-          <p className="body-medium text-fuchsia-500">Something happened here, maybe your internet has some problem 😐</p>
-          <p className="body-medium text-fuchsia-500">發生問題，請檢察網路連線 😐</p>
-        </div>
-        <div className="home-creators">
-          <p className="body-medium text-fuchsia-500">Something happened here, maybe your internet has some problem 😐</p>
-          <p className="body-medium text-fuchsia-500">發生問題，請檢察網路連線 😐</p>
+      <div className="flex flex-col items-center justify-center min-h-screen p-4">
+        <div className="text-center">
+          <p className="text-lg text-red-500 mb-2">Something happened here, maybe your internet has some problem 😐</p>
+          <p className="text-lg text-red-500">發生問題，請檢察網路連線 😐</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-1">
-      <div className="relative">
-      {isFullWidth && showAlert && ( // Conditionally render the alert based on showAlert state
-        <div className="fixed top-4 left-1/2 w-1/2 transform -translate-x-1/2 z-50 ">
-          <AlertDemo />
-        </div>)}
-      </div>
-      
-      <div className="home-container">
-        <div className="home-posts">
-          <h2 className="h3-bold md:h2-bold text-left w-full text-yellow-400">Home Page 主頁🏘️</h2>
-          {isPostLoading && !posts ? (
-            <Loader />
-          ) : (
-            <ul className="flex flex-col flex-1 gap-9 w-full ">
-              {posts?.documents.map((post: Models.Document) => (
-                <li key={post.$id} className="flex justify-center w-full ">
-                  <PostCard post={post} />
-                </li>
-              ))}
-            </ul>
-          )}
+    <div className="flex flex-col lg:flex-row flex-1 min-h-screen p-4">
+      {isFullWidth && showAlert && (
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+          <div className="relative bg-white shadow-lg rounded-lg p-4">
+            <AlertDemo />
+            <button
+              className="absolute top-2 right-2 text-xl text-gray-700 hover:text-gray-900 focus:outline-none"
+              onClick={() => setShowAlert(false)}
+            >
+              &times;
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
-      <div className="home-creators bg-gradient from-sky-200 to-sky-500">
-        <h3 className="h3-bold text-yellow-400">Trend creator熱門用戶</h3>
-        {isUserLoading && !creators ? (
+      <div className="home-container flex-1 p-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-4">Home Page 主頁🏘️</h2>
+        {isPostLoading ? (
           <Loader />
         ) : (
-          <ul className="grid 2xl:grid-cols-2 gap-6">
+          <ul className="space-y-9">
+            {posts?.documents.map((post: Models.Document) => (
+              <li key={post.$id} className="flex justify-center">
+                <PostCard post={post} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      <div className="home-creators bg-gradient-to-br from-[#c22Ed0] to-[#5ffae0] p-4 lg:w-1/3">
+        <h3 className="text-2xl font-bold text-yellow-400 mb-4">Trend Creator熱門用戶</h3>
+        {isUserLoading ? (
+          <Loader />
+        ) : (
+          <ul className="grid grid-cols-1 xl:grid-cols-2 gap-5">
             {creators?.documents.map((creator) => (
-              <li key={creator?.$id}>
+              <li key={creator.$id}>
                 <UserCard user={creator} />
               </li>
             ))}
