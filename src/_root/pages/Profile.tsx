@@ -28,7 +28,7 @@ const Profile = () => {
   const { id } = useParams();
   const { user } = useUserContext();
   const { pathname } = useLocation();
-  const { data: currentUser } = useGetUserById(id || "");
+  const { data: currentUser, isLoading, error } = useGetUserById(id || "");
   const [isOnline, setIsOnline] = useState(false);
 
   useEffect(() => {
@@ -36,10 +36,17 @@ const Profile = () => {
 
     const checkOnlineStatus = async () => {
       try {
-        // Assuming you have an endpoint to get user status
         const response = await fetch(`/api/user-status/${currentUser.$id}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
         const data = await response.json();
-        setIsOnline(data.isOnline);
+        console.log('API response:', data); // Debug log
+        if (data.isOnline !== undefined) {
+          setIsOnline(data.isOnline);
+        } else {
+          console.error("API response does not contain 'isOnline' field");
+        }
       } catch (error) {
         console.error("Error fetching user status:", error);
       }
@@ -48,11 +55,27 @@ const Profile = () => {
     // Initial status check
     checkOnlineStatus();
 
-    // Polling every 3seconds
+    // Polling every 3 seconds
     const intervalId = setInterval(checkOnlineStatus, 3000);
 
     return () => clearInterval(intervalId);
-  }, [currentUser?.$id]);
+  }, [currentUser]);
+
+  if (isLoading) {
+    return (
+      <div className="flex-center w-full h-full">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex-center w-full h-full">
+        <p>Error loading profile: {error.message}</p>
+      </div>
+    );
+  }
 
   if (!currentUser)
     return (
@@ -66,9 +89,7 @@ const Profile = () => {
       <div className="profile-inner_container">
         <div className="flex xl:flex-row flex-col max-xl:items-center flex-1 gap-7">
           <img
-            src={
-              currentUser.imageUrl || "/assets/icons/profile-placeholder.svg"
-            }
+            src={currentUser.imageUrl || "/assets/icons/profile-placeholder.svg"}
             alt="profile"
             className="w-28 h-28 lg:h-36 lg:w-36 rounded-full"
           />
@@ -84,7 +105,7 @@ const Profile = () => {
 
             <div className="flex gap-8 mt-10 items-center justify-center xl:justify-start flex-wrap z-20">
               <StatBlock value={currentUser.posts.length} label="Posts" />
-              <StatBlock label="Status" value={isOnline ? "Offline" : "Online"} />
+              <StatBlock label="Status" value={isOnline ? "Online" : "Offline"} />
             </div>
 
             <p className="small-medium md:base-medium text-center xl:text-left mt-7 max-w-screen-sm">
@@ -92,16 +113,14 @@ const Profile = () => {
             </p>
           </div>
 
-          <div className="flex justify-center gap-4">
-            <div className={`${user.id !== currentUser.$id && "hidden"}`}>
+          {user.id === currentUser.$id && (
+            <div className="flex justify-center gap-4">
               <Link
                 to={`/update-profile/${currentUser.$id}`}
-                className={`h-12 bg-dark-4 px-5 text-light-1 flex-center gap-2 rounded-lg ${
-                  user.id !== currentUser.$id && "hidden"
-                }`}
+                className="h-12 bg-dark-4 px-5 text-light-1 flex-center gap-2 rounded-lg"
               >
                 <img
-                  src={"/assets/icons/edit.svg"}
+                  src="/assets/icons/edit.svg"
                   alt="edit"
                   width={20}
                   height={20}
@@ -111,7 +130,7 @@ const Profile = () => {
                 </p>
               </Link>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
@@ -124,7 +143,7 @@ const Profile = () => {
             }`}
           >
             <img
-              src={"/assets/icons/posts.svg"}
+              src="/assets/icons/posts.svg"
               alt="posts"
               width={20}
               height={20}
@@ -138,7 +157,7 @@ const Profile = () => {
             }`}
           >
             <img
-              src={"/assets/icons/like.svg"}
+              src="/assets/icons/like.svg"
               alt="like"
               width={20}
               height={20}
@@ -154,7 +173,7 @@ const Profile = () => {
           element={<GridPostList posts={currentUser.posts} showUser={false} />}
         />
         {currentUser.$id === user.id && (
-          <Route path="/liked-posts" element={<LikedPosts />} />
+          <Route path="liked-posts" element={<LikedPosts />} />
         )}
       </Routes>
       <Outlet />

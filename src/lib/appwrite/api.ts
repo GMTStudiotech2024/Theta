@@ -564,6 +564,7 @@ export async function followUser(followerId: string, followedId: string) {
   }
 }
 
+
 // ============================== UNFOLLOW USER
 export async function unfollowUser(followId: string) {
   try {
