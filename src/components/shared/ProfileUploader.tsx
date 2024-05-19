@@ -46,4 +46,5 @@ const ProfileUploader = ({ fieldChange, mediaUrl }: ProfileUploaderProps) => {
   );
 };
 
+
 export default ProfileUploader;
