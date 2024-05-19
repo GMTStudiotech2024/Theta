@@ -52,7 +52,7 @@ const Home = () => {
     <div className="flex flex-col lg:flex-row flex-1 min-h-screen p-4">
       {isFullWidth && showAlert && (
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-          <div className="relative bg-white shadow-lg rounded-lg p-4">
+          <div className="relative bg-white shadow-lg rounded-lg">
             <AlertDemo />
             <button
               className="absolute top-2 right-2 text-xl text-gray-700 hover:text-gray-900 focus:outline-none"
