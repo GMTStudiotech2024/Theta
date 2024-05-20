@@ -80,7 +80,7 @@ const Home = () => {
       </div>
 
       <div className="home-creators bg-gradient-to-br from-[#c22Ed0] to-[#120632] p-4 lg:w-1/3">
-        <h3 className="text-2xl font-bold text-yellow-400 mb-4">Trend Creator熱門用戶</h3>
+        <h3 className="text-2xl font-bold text-yellow-400 mb-4">Trend Creator熱門用戶 </h3>
         {isUserLoading ? (
           <Loader />
         ) : (
