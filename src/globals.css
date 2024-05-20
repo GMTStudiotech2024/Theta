@@ -14,6 +14,7 @@
   .dark-theme {
     @apply bg-slate-900 text-white;
   }
+
   body {
     @apply bg-slate-900 text-white min-h-screen font-inter ;
   }
@@ -273,7 +274,7 @@
   /* Button */
   
   .shad-button_primary {
-    @apply bg-gradient-to-r from-[#121C84] to-[#8278DA] text-light-1 flex gap-1 !important;
+    @apply bg-gradient-to-r from-[#121C84] to-[#8278DA] text-light-1 flex gap-2 !important;
   }
 
   .shad-button_dark_4 {
