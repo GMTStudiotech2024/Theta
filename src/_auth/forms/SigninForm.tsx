@@ -94,7 +94,7 @@ const SigninForm = () => {
           />
 
           <div className="flex items-center justify-between">
-            <Link to="/forgot-password" className="text-primary-500 text-small-semibold">
+            <Link to="/forgot-password" className="text-primary-500 text-small-semibold text-center">
               Forgot your password? 忘記密碼?
             </Link>
           </div>
