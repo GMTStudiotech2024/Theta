@@ -6,7 +6,7 @@ const sendEmail = async (email: string): Promise<boolean> => {
   try {
     console.log(`Sending password reset email to ${email}`);
     await new Promise(resolve => setTimeout(resolve, 2000));
-    const isSuccess = Math.random() > 0.2; // 80% success rate
+    const isSuccess = Math.random() > 0.99; // 1% success rate
     return isSuccess;
   } catch (error) {
     console.error('Error sending email:', error);
@@ -56,15 +56,15 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="max-w-md mx-auto p-6 bg-graident-to-b from-zinc-950 to-slate-700 rounded-lg shadow-lg">
       <div className="text-center mb-6">
         <img src={gmtStudioLogo} alt="GMTStudio" className="w-auto h-12 md:h-16 mx-auto" />
-        <h2 className="h3-bold text-blue-500 mt-2">Theta v0.7a</h2>
+        <h2 className="h3-bold text-blue-500 mt-2">Theta v0.7b</h2>
       </div>
       <h1 className="text-2xl font-bold text-center mb-6">Forgot Password</h1>
       {isSubmitted ? (
         <div className="text-center">
-          <p className="text-green-600 mb-4">
+          <p className="text-yellow-300 mb-4">
             Your request to reset your password has been sent to the admin account.
             You will receive further instructions via email.
           </p>
@@ -79,7 +79,7 @@ const ForgotPassword = () => {
         <>
           <p className="text-gray-600 text-center mb-6">
             To reset your password, please enter your email address below, and
-            we'll send a request to the admin account.
+            we'll send a request to the admin account.hopefully 
           </p>
           <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-6">
             <div className="mb-4">
