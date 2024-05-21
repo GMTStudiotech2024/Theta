@@ -59,7 +59,7 @@ const ForgotPassword = () => {
     <div className="max-w-md mx-auto p-6 bg-graident-to-b from-zinc-950 to-slate-700 rounded-lg shadow-lg">
       <div className="text-center mb-6">
         <img src={gmtStudioLogo} alt="GMTStudio" className="w-auto h-12 md:h-16 mx-auto" />
-        <h2 className="h3-bold text-blue-500 mt-2">Theta v0.7b</h2>
+        <h2 className="h3-bold text-sky-500 mt-2">Theta v0.7c</h2>
       </div>
       <h1 className="text-2xl font-bold text-center mb-6">Forgot Password</h1>
       {isSubmitted ? (

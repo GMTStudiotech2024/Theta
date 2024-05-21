@@ -19,7 +19,7 @@ const Topbar = () => {
       <div className="flex-between py-4 px-5">
         <Link to="/" className="flex gap-3 items-center">
         <img src={gmtStudioLogo}  className="w-auto h-12 md:h-16" />
-        <h2 className="h3-bold md:h3-bold text-left w-full text-yellow-400">Theta v0.7b</h2>
+        <h2 className="h3-bold md:h3-bold text-left w-full text-sky-500">Theta v0.7c</h2>
         </Link>
 
         <div className="flex gap-4">

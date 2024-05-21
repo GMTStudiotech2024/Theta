@@ -54,7 +54,7 @@ const SigninForm = () => {
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
         <img src={gmtStudioLogo} alt="GMTStudio" className="w-auto h-12 md:h-16" />
-        <h2 className="h3-bold text-yellow-400">Theta v0.7b</h2>
+        <h2 className="h3-bold text-sky-500">Theta v0.7c</h2>
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">Log in to your account</h2>
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">登入帳號</h2>
