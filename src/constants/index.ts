@@ -25,9 +25,9 @@ export const sidebarLinks = [
     label: "Create Post新增貼文",
   },
   {
-    imgURL:"/assets/icons/chat.svg",
-    route:"/chat",
-    label:"Chat聊天"
+    imgURL:"/assets/icons/setting.svg",
+    route:"/setting",
+    label:"Setting 設定"
   }
 ];
 
@@ -53,8 +53,8 @@ export const bottombarLinks = [
     label: "Create 新增",
   },
     {
-    imgURL:"/assets/icons/chat.svg",
-    route:"/chat",
-    label:"Chat聊天"
+    imgURL:"/assets/icons/setting.svg",
+    route:"/setting",
+    label:"Setting 設定"
   }
 ];

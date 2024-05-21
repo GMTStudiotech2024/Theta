@@ -9,13 +9,13 @@ import {
   PostDetails,
   UpdateProfile,
   AllUsers,
+  Setting
 } from "@/_root/pages";
 import AuthLayout from "./_auth/AuthLayout";
 import RootLayout from "./_root/RootLayout";
 import SignupForm from "@/_auth/forms/SignupForm";
 import SigninForm from "@/_auth/forms/SigninForm";
 import { Toaster } from "@/components/ui/toaster";
-import { Chat } from "@/_root/pages/Chat";
 import "./globals.css";
 import ForgetPassword from "./_auth/forms/forget-password";
 
@@ -41,7 +41,7 @@ const App = () => {
           <Route path="/posts/:id" element={<PostDetails />} />
           <Route path="/profile/:id/*" element={<Profile />} />
           <Route path="/update-profile/:id" element={<UpdateProfile />} />
-          <Route path="/chat" element={<Chat />} />
+          <Route path="/setting" element={<Setting />} />
         </Route>
       </Routes>
       <Toaster />
