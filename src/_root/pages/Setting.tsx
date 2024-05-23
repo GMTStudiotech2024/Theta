@@ -17,17 +17,16 @@ export const Setting = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission, e.g., send settings to an API
     console.log('Settings submitted:', settings);
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="home-container flex-center max-h-screen bg-gray-900">
       <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Settings</h2>
+        <h2 className="h2-bold text-center text-gray-800 mb-8">Settings</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
+            <label htmlFor="username" className="block small-semibold text-gray-700">Username</label>
             <input
               type="text"
               id="username"
@@ -38,7 +37,7 @@ export const Setting = () => {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+            <label htmlFor="email" className="block small-semibold text-gray-700">Email</label>
             <input
               type="email"
               id="email"
@@ -57,14 +56,14 @@ export const Setting = () => {
               onChange={handleChange}
               className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
             />
-            <label htmlFor="notification" className="ml-2 text-sm font-medium text-gray-700">Enable Notifications</label>
+            <label htmlFor="notification" className="ml-2 small-semibold text-gray-700">Enable Notifications</label>
           </div>
           <div>
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-indigo-600 text-white font-medium rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="w-full py-3 px-4 shad-button_primary font-medium rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Save Settings
+              Save Settings <span >Not available yet </span>
             </button>
           </div>
         </form>
