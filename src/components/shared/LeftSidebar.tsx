@@ -29,7 +29,7 @@ const LeftSidebar = () => {
       <div className="flex flex-col gap-5">
         <Link to="/" className="flex gap-3 items-center">
         <img src={gmtStudioLogo}  className="w-auto h-12 md:h-16" />
-        <h2 className="h3-bold md:h3-bold text-left w-full text-sky-500">Theta v0.7c</h2>
+        <h2 className="h3-bold md:h3-bold text-left w-full text-sky-500">Theta v0.7d</h2>
         </Link>
 
         {isLoading || !user.email ? (
