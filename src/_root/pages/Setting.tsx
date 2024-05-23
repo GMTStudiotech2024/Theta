@@ -59,12 +59,7 @@ export const Setting = () => {
             <label htmlFor="notification" className="ml-2 small-semibold text-gray-700">Enable Notifications</label>
           </div>
           <div>
-            <button
-              type="submit"
-              className="w-full py-3 px-4 shad-button_primary font-medium rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Save Settings <span >Not available yet </span>
-            </button>
+            <button type="submit" className="w-full py-3 px-4 shad-button_primary font-medium rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save Settings <span >Not available yet </span></button>
           </div>
         </form>
       </div>
