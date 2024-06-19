@@ -6,7 +6,7 @@ import { Loader } from "@/components/shared";
 import { Button } from "@/components/ui/button";
 import { useSignOutAccount } from "@/lib/react-query/queries";
 import { useUserContext, INITIAL_USER } from "@/context/AuthContext";
-import gmtStudioLogo from '/assets/images/GMTStudio_.png';
+import gmtStudioLogo from '/assets/icons/Theta.png';
 const LeftSidebar = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();

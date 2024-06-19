@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import { useUserContext } from "@/context/AuthContext";
 import { useSignOutAccount } from "@/lib/react-query/queries";
-import gmtStudioLogo from '/assets/images/GMTStudio_.png';
+import gmtStudioLogo from '/assets/icons/Theta.png';
 const Topbar = () => {
   const navigate = useNavigate();
   const { user } = useUserContext();
@@ -12,7 +12,7 @@ const Topbar = () => {
 
   useEffect(() => {
     if (isSuccess) navigate(0);
-  }, [isSuccess]);
+  }, [isSuccess, navigate]);
 
   return (
     <section className="topbar">
